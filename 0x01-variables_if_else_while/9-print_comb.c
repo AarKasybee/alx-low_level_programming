@@ -13,7 +13,7 @@ int main(void)
 	while (i < 10)
 	{
 		putchar((char)numArr[i] + '0');
-		if ( i != 9)
+		if (i != 9)
 		{
 			putchar(',');
 			putchar(' ');
