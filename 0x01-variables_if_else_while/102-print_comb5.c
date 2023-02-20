@@ -3,7 +3,7 @@
 /**
  * main - start
  *
- * Return: end
+ * Return: returns 0
  */
 int main(void)
 {
@@ -29,6 +29,5 @@ int main(void)
 		i++;
 	}
 	return (0);
-	/* This is not done and is not correct yet*/
 }
 
