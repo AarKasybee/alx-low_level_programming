@@ -18,12 +18,15 @@ int main(void)
 		{
 			putchar(i + '0');
 			putchar(j + '0');
+			j++;
 		}
 		while(k < 10)
 		{
 			putchar(k + '0');
 			putchar(m + '0');
+			k++;
 		}
+		i++;
 	}
 	return (0);
 	/* This is not done and is not correct yet*/
