@@ -19,11 +19,11 @@ int main(void)
 			{
 				putchar((char)numArr[i] + '0');
 				putchar((char)numArr[j] + '0');
-			}
-			if (i < 8 || j < 9)
-			{
-				putchar(',');
-				putchar(' ');
+				if (i != 8)
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 			j++;
 		}
