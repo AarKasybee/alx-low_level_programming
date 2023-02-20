@@ -3,19 +3,19 @@
 /**
  * main - start
  *
- * Return - success returns 0
+ * Return: success returns 0
  */
 int main(void)
 {
-	int i;
+	int i = 0;
 	int j = 0;
 	int numArr[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 
-	for (i = 0; i < 10; i++)
+	while (i < 10)
 	{
-		for (j = i; j < 10; j++)
+		while (j < 10)
 		{
-			if (i != j)
+			if (j > i)
 			{
 				putchar((char)numArr[i] + '0');
 				putchar((char)numArr[j] + '0');
@@ -25,7 +25,10 @@ int main(void)
 				putchar(',');
 				putchar(' ');
 			}
+			j++;
 		}
+		j = 0;
+		i++;
 	}
 	putchar('\n');
 	return (0);

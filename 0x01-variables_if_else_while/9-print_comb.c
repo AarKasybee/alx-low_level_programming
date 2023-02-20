@@ -12,9 +12,12 @@ int main(void)
 
 	while (i < 10)
 	{
-		putchar((char)numArr[i]);
-		putchar(',');
-		putchar(' ');
+		putchar((char)numArr[i] + '0');
+		if ( i != 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
 		i++;
 	}
 	putchar('\n');
