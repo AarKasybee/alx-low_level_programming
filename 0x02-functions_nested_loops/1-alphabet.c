@@ -1,15 +1,8 @@
 #include <stdio.h>
 #include "main.h"
+#include "_putchar.c"
+#include "1-main.c"
 
-/**
- * main - start
- *
- * Return - success 0
- */
-int main(void)
-{
-	return (0);
-}
 /**
  * print_alphabet - prints the alphabet
  */
