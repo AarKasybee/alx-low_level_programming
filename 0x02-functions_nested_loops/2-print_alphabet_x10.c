@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main -start
@@ -7,7 +8,6 @@
  *
  * Return: end
  */
-void print_alphabet_x10(void);
 
 int main(void)
 {

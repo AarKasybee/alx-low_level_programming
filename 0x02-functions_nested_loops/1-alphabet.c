@@ -1,18 +1,20 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * main - calls afunction
  *
  * Return: returns 0
  */
-void print_alphabet(void);
 
 int main(void)
 {
 	print_alphabet();
 	return (0);
 }
-
+/**
+ * print_alphabet - prints the alphabet
+ */
 void print_alphabet(void)
 {
 	char alphaArr[] = "abcdefghijklmnopqrstuvwxyz";
