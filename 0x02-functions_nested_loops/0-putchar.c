@@ -11,7 +11,10 @@ int main(void)
 	print_putchar();
 	return (0);
 }
-void print_putchar()
+/**
+ * print_putchar - prints the string _putchar
+ */
+void print_putchar(void)
 {
 	printf("_putchar\n");
 }
