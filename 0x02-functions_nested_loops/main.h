@@ -1,6 +1,8 @@
 /**
  * This is a header file
  */
-void print_putchar(void);
+
+int  _putchar(char f);
 void print_alphabet(void);
 void print_alphabet_x10(void);
+int _islower(int c);

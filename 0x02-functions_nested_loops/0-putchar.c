@@ -2,19 +2,21 @@
 #include "main.h"
 
 /**
- * main -start of main prog
+ * main - prints the string _putchar
  *
  * Return: returns 0
  */
 int main(void)
 {
-	print_putchar();
+	int i = 0;
+	char arr[] = "_putchar";
+
+	while (i <8)
+	{
+		_putchar(arr[i]);
+		i++;
+	}
+	_putchar('\n');
+	
 	return (0);
-}
-/**
- * print_putchar - prints the string _putchar
- */
-void print_putchar(void)
-{
-	printf("_putchar\n");
 }
