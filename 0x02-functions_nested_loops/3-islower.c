@@ -4,6 +4,7 @@
 /**
  * _islower - checker for lower case input
  *
+ * @c: the number to be checked
  * Return: 1 if lower, 0 otherwise
  */
 int _islower(int c)
