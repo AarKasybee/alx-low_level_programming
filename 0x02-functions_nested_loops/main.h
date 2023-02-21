@@ -1,4 +1,3 @@
-#include <stdio.h>
 /**
  * This is a header file
  */

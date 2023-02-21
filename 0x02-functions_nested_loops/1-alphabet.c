@@ -1,9 +1,10 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
- * main - prints the alphabet
+ * main - start
  *
- * Return: 0(success)
+ * Return - success 0
  */
 int main(void)
 {
@@ -25,4 +26,3 @@ void print_alphabet(void)
 	}
 	putchar(new_line);
 }
-
