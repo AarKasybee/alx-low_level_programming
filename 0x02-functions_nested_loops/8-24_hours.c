@@ -12,25 +12,11 @@ void jack_bauer(void)
 	{
 		while (t < 59)
 		{
-			if (hours < 10)
-			{
-				putchar(0 + '0');
-				putchar(hours + '0');
-			}
-			else
-			{
-				putchar(hours + '0');
-			}
+			putchar(hours / 10 + '0');
+			putchar(hours % 10 + '0');
 			putchar(':');
-			if (t < 10)
-			{
-				putchar(0 + '0');
-				putchar(t + '0');
-			}
-			else
-			{
-				putchar(t + '0');
-			}
+			putchar(t / 10 + '0');
+			putchar(t % 10 + '0');
 			putchar('\n');
 			t++;
 		}
