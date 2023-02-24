@@ -3,7 +3,7 @@
 
 /**
  * _isupper - checks upper case
- * *@c: input
+ * @c: input
  *
  * Return: an int
  */
