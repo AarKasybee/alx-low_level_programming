@@ -10,8 +10,7 @@ int main(void)
 {
 	int i;
 
-	i = 16;
-	printf(" 1-main.c");
+	i = 98;
 	positive_or_negative(i);
 	return (0);
 }
