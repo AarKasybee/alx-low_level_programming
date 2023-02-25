@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 /**
  * print_last_digit - prints last digit
@@ -13,9 +14,27 @@ int print_last_digit(int n)
 
 	if (n < 0)
 	{
-		n = -n;
+		n = abs(n);
 	}
-	last_val = n % 10;
+	if (n >= 0 && n < 10)
+	{
+		last_val = n;
+	}
+	else if (n >= 10 && n < 100)
+	{
+		last_val = n % 10;
+	}
+	else if (n >= 100 && n < 1000)
+	{
+		last_val = n % 100;
+		last_val = last_val % 10;
+	}
+	else if (n >= 1000 && n < 9999)
+	{
+		last_val = n % 1000;
+		last_val = last_val % 100;
+		last_val = last_val % 10;
+	}
 	putchar(last_val + '0');
 	return (last_val);
 }
