@@ -3,7 +3,7 @@
 
 /**
  * print_array - print array of integers
- * @a: input1 
+ * @a: input1
  * @n: input2
  */
 
