@@ -6,7 +6,7 @@
 /**
  * _strncat - concatenates two strings.
  * @dest: str1
- * @srd: srt2
+ * @src: srt2
  * @n: int
  * Return: returns a char
  */
@@ -14,7 +14,7 @@ char *_strncat(char *dest, char *src, int n)
 {
 	size_t dest_len = _strlen(dest);
 	size_t src_len = strnlen(src, n);
-	char* new_dest = malloc(dest_len + src_len + 1);
+	char *new_dest = malloc(dest_len + src_len + 1);
 
 	if (new_dest == NULL)
 		return (NULL);
