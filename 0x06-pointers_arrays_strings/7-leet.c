@@ -13,30 +13,28 @@
 
 char *leet(char *p)
 {
-	int i = 0;
-	int length = strlen(p);
-	char *final;
+	
+        int i = 0, j;
+        int length = strlen(p);
+        char *final;
+        char leet_map[256] = {0};
 
-	final = malloc(length + 1);
-	memset(final, 0, length + 1);
-	strcpy(final, p);
-	while (p[i] != '\0')
-	{
-		if (p[i] == 'a' || p[i] == 'A')
-			final[i] = ('0' + 4);
-		else if (p[i] == 'e' || p[i] == 'E')
-			final[i] =  ('0' + 3);
-		else if (p[i] == 'o' || p[i] == 'O')
-			final[i] = ('0' + 0);
-		else if (p[i] == 't' || p[i] == 'T')
-			final[i] = ('0' + 7);
-		else if (p[i] == 'l' || p[i] == 'L')
-			final[i] = ('0' + 1);
-		else
-			final[i] = p[i];
-		i++;
-	}
-	strcpy(p, final);
-	free(final);
-	return (p);
+        final = malloc(length + 1);
+        memset(final, 0, length + 1);
+        strcpy(final, p);
+
+        leet_map['a'] = leet_map['A'] = '0' + 4;
+        leet_map['e'] = leet_map['E'] = '0' + 3;
+        leet_map['o'] = leet_map['O'] = '0' + 0;
+        leet_map['t'] = leet_map['T'] = '0' + 7;
+        leet_map['l'] = leet_map['L'] = '0' + 1;
+        while (p[i] != '\0')
+        {
+                j = (unsigned char) p[i];
+                final[i] = leet_map[j] ? leet_map[j] : p[i];
+                i++;
+        }
+        strcpy(p, final);
+        free(final);
+        return (p);
 }
