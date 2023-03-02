@@ -15,17 +15,17 @@ char *_strcat(char *dest, char *src)
 {
 	size_t dest_len = _strlen(dest);
 	size_t src_len = _strlen(src);
-	char *dest_end = (char*) malloc(dest_len + src_len + 1);
+	char *dest_end = (char *) malloc(dest_len + src_len + 1);
 
 	if (dest_end == NULL)
 	{
-		return NULL;
-     	}
+		return (NULL);
+	}
 	strcpy(dest_end, dest);
 	strcpy(dest_end + dest_len, src);
 	strcpy(dest, dest_end);
 	free(dest_end);
-	return dest;
+	return (dest);
 }
 /**
  * _strlen - returns the length of a string
