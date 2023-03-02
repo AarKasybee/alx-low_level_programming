@@ -17,7 +17,7 @@ char *string_toupper(char *a)
 		a[i] = convert(a[i]);
 		i++;
 	}
-		return a;
+	return (a);
 }
 /**
  * convert - converts from lower to upper
@@ -28,10 +28,10 @@ int convert(int c)
 {
 	if (c >= 'a' && c <= 'z')
 	{
-		return c - 'a' + 'A';
+		return (c - 'a' + 'A');
 	}
 	else
 	{
-		return c;
+		return (c);
 	}
 }
