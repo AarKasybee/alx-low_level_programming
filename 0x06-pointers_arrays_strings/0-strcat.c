@@ -13,14 +13,18 @@
  */
 char *_strcat(char *dest, char *src)
 {
-	char *dest_end = dest + _strlen(dest);
+	size_t dest_len = _strlen(dest);
+	size_t src_len = _strlen(src);
+	char *dest_end = (char*) malloc(dest_len + src_len + 1);
 
-	while (*src != '\0')
+	if (dest_end == NULL)
 	{
-		*dest_end++ = *src++;
-	}
-	*dest_end = '\0';
-	return dest;
+		return NULL;
+     	}
+	strcpy(dest_end, dest);
+	strcpy(dest_end + dest_len, src);
+
+	return dest_end;
 }
 /**
  * _strlen - returns the length of a string
