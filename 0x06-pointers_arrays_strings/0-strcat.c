@@ -23,8 +23,9 @@ char *_strcat(char *dest, char *src)
      	}
 	strcpy(dest_end, dest);
 	strcpy(dest_end + dest_len, src);
-
-	return dest_end;
+	strcpy(dest, dest_end);
+	free(dest_end);
+	return dest;
 }
 /**
  * _strlen - returns the length of a string
