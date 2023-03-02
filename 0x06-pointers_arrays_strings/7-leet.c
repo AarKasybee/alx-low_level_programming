@@ -35,5 +35,7 @@ char *leet(char *p)
 		else final[i] = p[i];
 		i++;
 	}
-	return (final);
+	strcpy (p, final);
+	free (final);
+	return (p);
 }
