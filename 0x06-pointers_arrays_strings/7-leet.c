@@ -32,10 +32,11 @@ char *leet(char *p)
 			final[i] = ('0' + 7);
 		else if (p[i] == 'l' || p[i] == 'L')
 			final[i] = ('0' + 1);
-		else final[i] = p[i];
+		else
+			final[i] = p[i];
 		i++;
 	}
-	strcpy (p, final);
-	free (final);
+	strcpy(p, final);
+	free(final);
 	return (p);
 }
