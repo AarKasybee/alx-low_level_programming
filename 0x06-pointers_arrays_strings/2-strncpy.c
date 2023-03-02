@@ -5,7 +5,7 @@
 /**
  * _strncpy - Function
  * @dest: str1
- * @srd: ste2
+ * @src: ste2
  * @n: intger input
  */
 char *_strncpy(char *dest, char *src, int n)
@@ -19,5 +19,5 @@ char *_strncpy(char *dest, char *src, int n)
 	{
 		dest[i] = '\0';
 	}
-	return dest;
+	return (dest);
 }
