@@ -20,9 +20,9 @@ char *_strpbrk(char *s, char *accept)
 		{
 			if (*p == *q)
 			{
-				return (char *)p;
+				return ((char *)p);
 			}
 		}
 	}
-	return NULL;
+	return (NULL);
 }
