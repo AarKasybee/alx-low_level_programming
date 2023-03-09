@@ -3,6 +3,8 @@
  * _pow_recursion - power
  * @x: firsy num
  * @y: sec num
+ *
+ * Return: integer of power
  */
 
 int _pow_recursion(int x, int y)

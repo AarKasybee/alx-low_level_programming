@@ -18,9 +18,8 @@ int is_prime_number(int n)
 	{
 		return (1);
 	}
-	return is_prime_helper(n, n-1);
+	return (is_prime_helper(n, n - 1));
 }
-
 /**
  * is_prime_helper - helper function for is_prime_number
  * @n: the number to check
@@ -38,7 +37,7 @@ int is_prime_helper(int n, int divisor)
 	{
 		return (0);
 	}
-	else 
+	else
 	{
 		return (is_prime_helper(n, divisor - 1));
 	}
