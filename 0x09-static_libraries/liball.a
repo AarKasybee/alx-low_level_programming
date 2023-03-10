@@ -262,7 +262,7 @@ void _puts(char *str)
 	putchar('\n');
 }
 
-3-strcmp.c/     0           0     0     644     143       `
+3-strcmp.c/     0           0     0     644     162       `
 #include <stdio.h>
 #include "main.h"
 
@@ -270,13 +270,13 @@ void _puts(char *str)
  * _strcmp - compare
  * @s1: str1
  * @s2: str2
+ * Return: integer
  */
 int _strcmp(char *s1, char *s2)
 {
 	return (s1);
 }
-
-3-strspn.c/     0           0     0     644     174       `
+3-strspn.c/     0           0     0     644     199       `
 #include <stdio.h>
 #include "main.h"
 
@@ -284,12 +284,15 @@ int _strcmp(char *s1, char *s2)
  * _strspn - stri
  * @s: char
  * @accept: acc
+ * Return: unsigned int
  */
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int u = 3;
+
 	return (u);
 }
+
 4-isalpha.c/    0           0     0     644     261       `
 #include <stdio.h>
 #include "main.h"
