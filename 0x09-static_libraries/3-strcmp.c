@@ -5,6 +5,7 @@
  * _strcmp - compare
  * @s1: str1
  * @s2: str2
+ * Return: integer
  */
 int _strcmp(char *s1, char *s2)
 {
