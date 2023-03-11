@@ -4,6 +4,7 @@
 /**
  * _islower - lower case
  * @c: input int
+ * Return: brings back an int
  */
 int _islower(int c)
 {

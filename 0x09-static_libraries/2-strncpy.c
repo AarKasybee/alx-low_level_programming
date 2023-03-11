@@ -6,6 +6,7 @@
  * @dest: desitnation
  * @src: sorce
  * @n: number
+ * Return: char val
  */
 char *_strncpy(char *dest, char *src, int n)
 {
