@@ -31,8 +31,7 @@ char *create_array(unsigned int size, char c)
 		{
 			exit(1);
 		}
-		ptr[i] = c;
-		i++;
+		ptr[i++] = c;
 	}
 	ptr[size] = '\0';
 	return (ptr);
