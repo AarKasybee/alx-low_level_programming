@@ -43,6 +43,10 @@ char *str_concat(char *s1, char *s2)
 	for (j = 0; j <= size2; j++)
 	{
 		newStr[i + j] = s2[j];
+		if (s2 == NULL)
+		{
+			newStr[i + j] = newStr[i] + '\0';
+		}
 	}
 	return (newStr);
 }
