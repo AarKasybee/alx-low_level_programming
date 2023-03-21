@@ -2,10 +2,11 @@
 #define MY_HEADER_FILE_H
 
 /**
- * dog - dog info
+ * struct dog - dog info
+ *
  * @name: dog's name
  * @age: dog's age in dog years :)
- * #owner: dog's owner
+ * @owner: dog's owner
  *
  * Description: This gives the details of the dog, name, age and owner
  */
