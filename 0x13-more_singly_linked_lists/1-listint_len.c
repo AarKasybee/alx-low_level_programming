@@ -4,10 +4,10 @@
 #include "lists.h"
 
 /**
- * listint_len - returns the number of elements in a linked listint_t list.
+ * listint_len - a function that return the length of the list
  * @h: pointer to a struct
  *
- * Returns: number of elements in a linked listint_t list
+ * Returns: length of struct
  */
 size_t listint_len(const listint_t *h)
 {
