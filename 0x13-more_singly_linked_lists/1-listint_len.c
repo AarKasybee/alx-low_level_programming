@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * listint_len - a function that return the length of the list
+ * listint_len - listint_len return the length of the list
  * @h: pointer to a struct
  *
  * Returns: length of struct
