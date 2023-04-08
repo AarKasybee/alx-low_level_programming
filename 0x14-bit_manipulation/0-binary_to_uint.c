@@ -17,10 +17,18 @@ unsigned int binary_to_uint(const char *b)
 
 	while (b[i] != '\0')
 	{
-		len--;
-		remainder = b[i] - '0';
-		dec_val += remainder * _pow(2, len);
-		++i;
+		if (b[i] != '0' && b[i] != '1')
+		{
+			dec_val = 0;
+			return (dec_val);
+		}
+		else
+		{
+			len--;
+			remainder = b[i] - '0';
+			dec_val += remainder * _pow(2, len);
+			++i;
+		}
 	}
 	return (dec_val);
 }
