@@ -5,9 +5,9 @@
 #include "main.h"
 
 /**
- * get_bit - gets the number of bits
+ * get_bit - function that returns the value of a bit at a given index.
  * @n: given number
- * @b: binary value
+ * @index: index position
  *
  * Return: returns index value
  */
