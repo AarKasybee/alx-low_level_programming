@@ -11,6 +11,7 @@ void print_binary(unsigned long int n)
 {
 	unsigned long int temp = n;
 	int shifts = 0;
+	int started = 0;
 
 	if (n == 0)
 	{
@@ -26,9 +27,10 @@ void print_binary(unsigned long int n)
 	{
 		if ((n >> shifts) & 1)
 		{
+			started = 1;
 			_putchar('1');
 		}
-		else
+		else if (started)
 		{
 			_putchar('0');
 		}
