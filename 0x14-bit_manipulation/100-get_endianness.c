@@ -10,11 +10,11 @@ int get_endianness(void)
 
 	val = 1;
 	if (*(char *)&val == 1)
-  {
+	{
 		return (1);
-  }
+	}
 	else
-  {
+	{
 		return (0);
-  }
+	}
 }
