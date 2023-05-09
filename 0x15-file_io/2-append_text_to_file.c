@@ -15,17 +15,17 @@
  */
 int append_text_to_file(const char *filename, char *text_content)
 {
-	FILE *file;
+	int file;
 	int len;
 
 	if (access(filename, F_OK) != -1)
 	{
 		if (text_content == NULL)
 		{
-			return (1) /*do nothin*/;
+			return (1); /*do nothin*/;
 		}
-		file = fopen(filename, "r+");
-		if (file == NULL)
+		file = open(filename, O_WRONLY | O_APPEND);
+		if (file == -1)
 		{
 			return (-1);
 		}
@@ -33,7 +33,12 @@ int append_text_to_file(const char *filename, char *text_content)
 		{
 			len++;
 		}
-		fprintf(file, "%s", text_content);
+		if (write(file, text_content, len) == -1)
+		{
+			close(file);
+			return (-1);
+		}
+		close(file);
 		return (1);
 	}
 	else
