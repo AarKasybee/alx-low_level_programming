@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <unistd.h>
+#include <fcntl.h>
 
 /**
  * read_textfile - function that reads a text file and
@@ -12,19 +14,19 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	FILE *file = fopen(filename, "r");
+	int op = open(filename, O_RDONLY);
 	char *buffer = malloc(letters + 1);
 	size_t bytes_read;
 
-	if (file == NULL || buffer == NULL)
+	if (op == -1 || buffer == NULL)
 	{
 		free(buffer);
 		return (0);
 	}
-	bytes_read = fread(buffer, sizeof(char), letters, file);
+	bytes_read = read(op, buffer, letters);
 	buffer[bytes_read] = '\0';
-	printf("%s", buffer);
-	fclose(file);
+	write(STDOUT_FILENO, buffer, bytes_read);
+	close(op);
 	free(buffer);
 	return (bytes_read);
 }
