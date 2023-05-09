@@ -1,8 +1,5 @@
-#include <unistd.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/stat.h>
+#include "main.h"
+
 /**
  * create_file -  function that creates a file.
  * @filename: name of file
@@ -13,7 +10,7 @@
  */
 int create_file(const char *filename, char *text_content)
 {
-	FILE *file;
+	int op, bytes_written, len = 0;
 
 	if (access(filename, F_OK) != -1)
 	{
@@ -21,30 +18,33 @@ int create_file(const char *filename, char *text_content)
 		{
 			text_content = "";
 		}
-		file = fopen(filename, "r+");
-		if (file == NULL)
+		op = open(filename, O_WRONLY | O_TRUNC);
+		if (op == -1)
 		{
 			return (-1);
 		}
-		fprintf(file, "%s", text_content);
 	}
 	else
 	{
-		file = fopen(filename, "w+");
-		if (file == NULL)
+		op = open(filename, O_WRONLY | O_CREAT, S_IRUSR | S_IWUSR);
+		if (op == -1)
 		{
 			return (-1);
 		}
-		if (text_content == NULL)
-		{
-			text_content = "";
-		}
-		fprintf(file, "%s", text_content);
 	}
-	if (chmod(filename, S_IRUSR | S_IWUSR) == -1)
+	if (text_content != NULL)
 	{
-		return (-1);
+		while (text_content[len] != '\0')
+		{
+			len++;
+		}
+		bytes_written = write(op, text_content, len);
+		if (bytes_written == -1)
+		{
+			close(op);
+			return (-1);
+		}
 	}
-	fclose(file);
+	close(op);
 	return (1);
 }
