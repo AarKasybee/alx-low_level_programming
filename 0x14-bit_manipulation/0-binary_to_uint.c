@@ -1,58 +1,30 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
- * binary_to_uint - converts bin to uint
- * @b: binary value
- *
- * Return: unsigned integer
+ * binary_to_uint - convert a binary number to an unsigned int
+ * @b: char string
+ * Return: converted decimal number or 0 if there is an unconvertable char
  */
 unsigned int binary_to_uint(const char *b)
 {
-	int dec_val = 0, i = 0, remainder;
-	int len = strlen(b);
+	unsigned int total, power;
+	int len;
 
 	if (b == NULL)
-	{
 		return (0);
-	}
-	while (b[i] != '\0')
-	{
-		if (b[i] != '0' && b[i] != '1')
-		{
-			dec_val = 0;
-			return (dec_val);
-		}
-		else
-		{
-			len--;
-			remainder = b[i] - '0';
-			dec_val += remainder * _pow(2, len);
-			++i;
-		}
-	}
-	return (dec_val);
-}
 
-/**
- * _pow - power function
- * @base: base of number
- * @exponent: exponent val
- *
- * Return: result of the power
- */
-double _pow(double base, int exponent)
-{
-	double result = 1.0;
-	int i;
+	for (len = 0; b[len]; len++)
+	{
+		if (b[len] != '0' && b[len] != '1')
+			return (0);
+	}
 
-	if (exponent < 0)
+	for (power = 1, total = 0, len--; len >= 0; len--, power *= 2)
 	{
-		base = 1.0 / base;
-		exponent = -exponent;
+		if (b[len] == '1')
+			total += power;
 	}
-	for (i = 0; i < exponent; i++)
-	{
-		result *= base;
-	}
-	return (result);
+
+	return (total);
 }
