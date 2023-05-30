@@ -13,38 +13,14 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-	unsigned long int temp = n;
-	unsigned int shifts = 0;
-	unsigned int arr[64];
-	int started = 0;
-	unsigned int len = 0;
+	 unsigned long int mask;
+	  unsigned long int bit;
 
-	while (temp > 0)
-	{
-		temp >>= 1;
-		len++;
-	}
-	if (len > 64)
-	{
-		return (-1);
-	}
-	while (shifts < len)
-	{
-		if ((n >> shifts) & 1)
-		{
-			started = 1;
-			arr[len - shifts - 1] = 1;
-		}
-		else if (started)
-		{
-			arr[len - shifts - 1] = 0;
-		}
-		shifts++;
-	}
-	if (index >= len)
-	{
-		return (-1);
-	}
-	return (arr[len - index - 1]);
+	  if (index >= sizeof(unsigned long int) * 8)
+	  {
+		  return (-1);
+	  }
+	  mask = 1UL << index;
+	  bit = (n & mask) >> index;
+	  return ((int)bit);
 }
-
